@@ -25,3 +25,11 @@ The server starts a Python process that binds to TCP port 8080 and serves HTTP r
 - Sending SIGTERM using `kill` stops the process cleanly.
 - After termination, the port is released and reusable.
 - Force killing (SIGKILL) immediately stops the process without cleanup.
+
+## Signals & Process Lifecycle
+
+- SIGINT (CTRL+C) allows graceful shutdown from terminal.
+- SIGTERM is used for controlled shutdowns in production systems.
+- SIGKILL immediately terminates a process without cleanup.
+- Zombie processes occur when a parent process does not reap a finished child.
+- Excess zombie processes can exhaust system PID limits.
